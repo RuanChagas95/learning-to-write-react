@@ -14,5 +14,38 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
-  },
+      "indent": [
+        "error",
+        2
+      ],
+      "linebreak-style": [
+        "error",
+        "unix"
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "semi": [
+        "error",
+        "never"
+      ],
+      "no-trailing-spaces": [
+        "error",
+        { "skipBlankLines": true }
+      ],
+      "no-multiple-empty-lines": [
+        "error",
+        {
+          "max": 1,
+          "maxEOF": 0,
+          "maxBOF": 0
+        }
+      ],
+        "padding-line-between-statements": [
+          "error",
+          { "blankLine": "always", "prev": "function", "next": "function" }
+      ]
+      
+    },
 }
