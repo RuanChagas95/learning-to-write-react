@@ -10,10 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
     "@types/styled-components": "^5.1.26",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^6.0.7"
+    "react-redux": "^8.1.2",
+    "styled-components": "^6.0.7",
+    "sweetalert2": "^11.7.27"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

@@ -5,3 +5,13 @@ export type DataType = {
       }
     }
 }
+
+export type GamePropsType = {
+  name: string,
+  word: string,
+  writedLetters?: string
+}
+
+export type RootReducerType = {
+  gameData: GamePropsType
+}
