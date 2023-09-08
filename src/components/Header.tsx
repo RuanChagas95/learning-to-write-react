@@ -1,5 +1,5 @@
 import GearIcon from '../assets/GearIcon'
-import { useState, useRef, useEffect } from 'react'
+import { useState } from 'react'
 import { getCategoriesKeys } from '../utils/getData'
 import styled from 'styled-components'
 
@@ -24,14 +24,11 @@ const HeaderStyle = styled.header`
 `
 export default function Header() {
   const [configIsVisible, setConfigIsVisible] = useState(false)
-  const listEl = useRef(null)
-  useEffect(() => {
-    console.log(listEl)
-  })
+
   return (
     <HeaderStyle>
       {configIsVisible && (
-        <CategoriesStyle ref={listEl}>
+        <CategoriesStyle>
           {
             getCategoriesKeys()
               .map((category) => <CategoryStyle key={category}>{category}</CategoryStyle>)
