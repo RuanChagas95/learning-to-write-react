@@ -5,13 +5,14 @@ import Swal from 'sweetalert2'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootReducerType } from './types'
 import { setWordState } from './redux/gameData/actionsTypes'
+import GameText from './components/GameText'
 
 function App() {
   const dispatch = useDispatch()
 
   useEffect(() => {
     Swal.fire({
-      title: 'What is the name of children?',
+      title: 'What is the child\'s name?',
       input: 'text',
       inputPlaceholder: 'Name of children',
       backdrop: false,
@@ -33,7 +34,7 @@ function App() {
     <>
       <Header/>
       {gameData.writedLetters}
-      {'current word: ' + gameData.word }
+      <GameText />
     </>
   )
 }
