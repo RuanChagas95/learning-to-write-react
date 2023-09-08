@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { RootReducerType } from './types'
 import { setWordState } from './redux/gameData/actionsTypes'
 import GameText from './components/GameText'
+import InvisibleInput from './components/InvisibleInput'
 
 function App() {
   const dispatch = useDispatch()
@@ -33,8 +34,8 @@ function App() {
   return (
     <>
       <Header/>
-      {gameData.writedLetters}
       <GameText />
+      {gameData.word && <InvisibleInput />}
     </>
   )
 }
