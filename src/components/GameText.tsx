@@ -47,7 +47,7 @@ export default function GameText() {
         gameData.word.toLocaleUpperCase().split('').map((letter, index) =>
           <LetterDiv key={index}>
             <LetterText>
-              {Number(gameData.writedLetters) || 0 > index ? letter : ' '}
+              {(gameData.writedLetters || 0) > index ? letter : ' '}
             </LetterText>
           </LetterDiv>
         )
