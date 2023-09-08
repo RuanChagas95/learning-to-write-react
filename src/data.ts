@@ -1,6 +1,10 @@
 import { DataType } from './types'
 
 const data:DataType = {
+  Questions: {
+    default: 'What is your name?',
+    all: []
+  },
   Fruits: {
     Appple: {
       img: 'https://scfoods.fbitsstatic.net/img/p/maca-red-argentina-unidade-70942/257561.jpg?w=800&h=800&v=no-change&qs=ignore'

@@ -3,13 +3,16 @@ export type DataType = {
       [item: string]: {
         img: string
       }
+    } | {
+      default: string
+      all: string[]
     }
 }
 
 export type GamePropsType = {
   name: string,
   word: string,
-  writedLetters?: string
+  writedLetters?: number
 }
 
 export type RootReducerType = {
