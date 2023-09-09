@@ -34,7 +34,7 @@ function App() {
   return (
     <>
       <Header/>
-      <GameText />
+      {gameData.word && <GameText />}
       {gameData.word && <InvisibleInput />}
     </>
   )
