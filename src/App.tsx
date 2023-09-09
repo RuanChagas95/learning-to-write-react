@@ -1,43 +1,19 @@
 import './App.css'
-import Header from './components/Header'
-import { useEffect } from 'react'
-import Swal from 'sweetalert2'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { RootReducerType } from './types'
-import { setWordState } from './redux/gameData/actionsTypes'
-import GameText from './components/GameText'
-import InvisibleInput from './components/InvisibleInput'
+import StartPage from './pages/StartPage'
+import Game from './pages/Game'
 
 function App() {
-  const dispatch = useDispatch()
 
-  useEffect(() => {
-    Swal.fire({
-      title: 'What is the child\'s name?',
-      input: 'text',
-      inputPlaceholder: 'Name of children',
-      backdrop: false,
-      preConfirm: (value: string) => {
-        if (!value) {
-          Swal.showValidationMessage('Ahh... you need to write something')
-        }
-        const name = value.replace(' ', '')
-        dispatch({type: setWordState, payload: {name: value,
-          word: name.toLocaleLowerCase()}})
-        return value
-      }
-    })
-    
-  }, [dispatch])
   const gameData = useSelector(( state : RootReducerType) => state.gameData)
   
-  return (
-    <>
-      <Header/>
-      {gameData.word && <GameText />}
-      {gameData.word && <InvisibleInput />}
-    </>
-  )
+  return <>
+    {gameData.word ? (
+      <Game />
+    ): (<StartPage/>)}
+  </>
+  
 }
 
 export default App
