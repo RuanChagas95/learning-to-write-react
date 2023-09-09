@@ -50,7 +50,7 @@ export default function GameText() {
   
   useEffect(() => {
     setWinner(verifyWinner(gameData.word, gameData.writedLetters))
-    if(winner) {
+    if(winner && gameData.writedLetters) {
       const timeout = setTimeout(() => {
         dispatch({ type: reset })
       }, 1600)
