@@ -25,7 +25,7 @@ export default function InvisibleInput() {
     if (!inputRef.current) {
       return
     }
-    const value = inputRef.current.value
+    const value = inputRef.current.value.toLocaleLowerCase()
     const match = word[writedLetters || 0] === value
     if (match) {
       dispatch({type: hitLetter})

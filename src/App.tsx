@@ -23,7 +23,7 @@ function App() {
         }
         const name = value.replace(' ', '')
         dispatch({type: setWordState, payload: {name: value,
-          word: name}})
+          word: name.toLocaleLowerCase()}})
         return value
       }
     })
