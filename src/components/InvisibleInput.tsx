@@ -11,6 +11,9 @@ const Input = styled.input`
     width: 0;
     height: 0; 
 `
+const Label = styled.label`
+display: none;
+`
 export default function InvisibleInput() {
   const inputRef = useRef<HTMLInputElement>(null)
   const forceFocus = () => {inputRef.current?.focus()}
@@ -32,7 +35,10 @@ export default function InvisibleInput() {
   useEffect(() => {
     forceFocus()
   }, [])
-  return (
-    <Input type='text' onBlur={forceFocus} ref={inputRef} onChange={handleChange}/>
+  return (<>
+    <Label htmlFor="invisible">invisible label
+    </Label>
+    <Input id='invisible' name='invisible' type='text' onBlur={forceFocus} ref={inputRef} onChange={handleChange}/>
+  </>
   )
 }
