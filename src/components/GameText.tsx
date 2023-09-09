@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux'
 import { RootReducerType } from '../types'
 import styled from 'styled-components'
 import { useEffect, useState } from 'react'
-import { verifyWinner } from '../utils/game'
+import { playWinnerAudio, verifyWinner } from '../utils/game'
 import { fadeIn } from '../styles/animations/'
 import { reset } from '../redux/gameData/actionsTypes'
 import { useDispatch } from 'react-redux'
@@ -54,6 +54,7 @@ export default function GameText() {
       const timeout = setTimeout(() => {
         dispatch({ type: reset })
       }, 1600)
+      playWinnerAudio()
       return () => {
         clearTimeout(timeout)
       }

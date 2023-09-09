@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 import { RootReducerType } from '../types'
 import { hitLetter } from '../redux/gameData/actionsTypes'
+import { playHitAudio } from '../utils/game'
+
 const Input = styled.input`
     border: none;
     outline: none;
@@ -29,6 +31,7 @@ export default function InvisibleInput() {
     const match = word[writedLetters || 0] === value
     if (match) {
       dispatch({type: hitLetter})
+      playHitAudio()
     }
     inputRef.current.value = ''
   }
