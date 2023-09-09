@@ -25,7 +25,7 @@ background: radial-gradient(circle, rgba(243,255,0,1) 0%, rgba(255,237,0,1) 38%,
 }
 `
 
-const LetterDiv = styled.div<{winner: string}>`
+const LetterDiv = styled.div<{$winner: string}>`
   display: inline-flex;
   justify-content: center;
   width: 50px;
@@ -34,7 +34,7 @@ const LetterDiv = styled.div<{winner: string}>`
   border-radius: 5px;
   background-color: aliceblue;
   box-shadow: 29px 28px 24px 0px rgba(0,0,0,0.1);
-  animation: ${props => props.winner ? fadeIn : 'none'} 800ms infinite;
+  animation: ${props => props.$winner ? fadeIn : 'none'} 800ms infinite;
 `
 
 const LetterText = styled.label`
@@ -65,7 +65,7 @@ export default function GameText() {
     <WordDiv>
       {
         gameData.word.toLocaleUpperCase().split('').map((letter, index) =>
-          <LetterDiv key={index} winner={winner ? 'true' : ''}>
+          <LetterDiv key={index} $winner={winner ? 'true' : ''}>
             <LetterText>
               {(gameData.writedLetters || 0) > index ? letter : ' '}
             </LetterText>
