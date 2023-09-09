@@ -3,7 +3,7 @@ import { GamePropsType } from '../../types'
 const initialState = {
   name: null,
   word: null,
-  writedLetters: null
+  writedLetters: 0
 }
 type actionType = {
     type: string
@@ -26,7 +26,7 @@ const gameData = (state = initialState, action: actionType) => {
   case reset:
     return {
       ...state,
-      writedLetters: null
+      writedLetters: 0
     }
   default:
     return state
