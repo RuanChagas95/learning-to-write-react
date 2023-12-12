@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux'
 import { RootReducerType } from '../../utils/types'
 import useGameStatus from '../../hooks/useGameStatus'
 import { WordDiv, LetterDiv, LetterText, Sun } from './styles'
+import GameImg from '../GameImg'
 
 export default function GameText() {
   const gameData = useSelector((state: RootReducerType) => state.gameData)
@@ -19,5 +20,6 @@ export default function GameText() {
         )
       }
       <Sun/>
+      <GameImg/>
     </WordDiv>))
 }

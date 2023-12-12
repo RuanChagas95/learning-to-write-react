@@ -7,6 +7,7 @@ width: 100vw;
 height: 200px;
 justify-content: center;
 padding: 50px 0 0 0;
+position: relative;
 `
 
 export const LetterDiv = styled.div<{$winner: boolean}>`
