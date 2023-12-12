@@ -11,12 +11,13 @@ type actionType = {
 }
 
 const gameData = (state = initialState, action: actionType) => {
-    
+  
   switch (action.type) {
   case setWordState:
     return  {
       ...state,
-      ...action.payload
+      ...action.payload,
+      writedLetters: 0
     }
   case hitLetter:
     return {
