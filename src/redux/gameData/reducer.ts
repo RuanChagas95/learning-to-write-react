@@ -1,5 +1,5 @@
 import { setWordState, hitLetter, reset } from './actionsTypes'
-import { GamePropsType } from '../../types'
+import { GamePropsType } from '../../utils/types'
 const initialState = {
   name: null,
   word: null,

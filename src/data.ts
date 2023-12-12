@@ -1,4 +1,4 @@
-import { DataType } from './types'
+import { DataType } from './utils/types'
 
 const data:DataType = {
   Questions: {

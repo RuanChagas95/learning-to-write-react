@@ -12,9 +12,16 @@ export type DataType = {
 export type GamePropsType = {
   name: string,
   word: string,
-  writedLetters?: number
+  writedLetters: number
 }
 
 export type RootReducerType = {
   gameData: GamePropsType
+}
+export type InitialRootReducerType = {
+  gameData : {
+    name: null,
+    word: null,
+    writedLetters: number
+}
 }
