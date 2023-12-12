@@ -1,10 +1,10 @@
 import Swal from 'sweetalert2'
 import { setWordState } from '../redux/gameData/actionsTypes'
-import { Dispatch } from 'react'
-import { AnyAction } from '@reduxjs/toolkit'
+import { useDispatch } from 'react-redux'
 
-export default function Login(dispatch : Dispatch<AnyAction>) {
-  Swal.fire({
+export default function Login() {
+  const dispatch = useDispatch()
+  return () => Swal.fire({
     title: 'What is the child\'s name?',
     input: 'text',
     inputPlaceholder: 'Name of children',

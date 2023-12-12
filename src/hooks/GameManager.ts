@@ -3,7 +3,7 @@ import useGameStatus from './useGameStatus'
 import { reset } from '../redux/gameData/actionsTypes'
 import { playWinnerAudio } from '../utils/game'
 import { RootReducerType } from '../utils/types'
-import Login from '../components/Login'
+import useLogin from './useLogin'
 import { useEffect } from 'react'
 
 function useResetGame() : [() => void, React.DependencyList] {
@@ -25,11 +25,12 @@ function useResetGame() : [() => void, React.DependencyList] {
 
 export default () => {
   const name = useSelector((state: RootReducerType) => state.gameData.name)
-  const dispatch = useDispatch()
+  const login = useLogin()
+
   if (!name) {
-    Login(dispatch)
+    login()
   }
   const [resetGame, dependencesArray] = useResetGame()
-  useEffect(() => resetGame(), [dependencesArray])
+  useEffect(() => resetGame(), [dependencesArray, resetGame])
   
 }
