@@ -1,8 +1,8 @@
 #root {
   text-align: center;
-  display: flex;
   margin-top: 50px;
   width: 100vw;
   min-height: 100vh;
   justify-content: center;
+  overflow: hidden;
 }

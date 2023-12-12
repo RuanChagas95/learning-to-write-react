@@ -4,6 +4,7 @@ import InvisibleInput from '../components/InvisibleInput'
 import GameManager from '../hooks/GameManager'
 import { useSelector } from 'react-redux'
 import { InitialRootReducerType, RootReducerType } from '../utils/types'
+import GameImg from '../components/GameImg'
 
 export default function Game() {
   const name = useSelector((state: RootReducerType | InitialRootReducerType) => state.gameData.name)
@@ -14,6 +15,7 @@ export default function Game() {
       <>
         <Header/>
         <GameText />
+        <GameImg />
         <InvisibleInput />
       </>
     )

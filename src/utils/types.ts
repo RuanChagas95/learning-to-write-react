@@ -1,4 +1,4 @@
-export type DataItemType = {word: string, img?: string, question?: string}
+export type DataItemType = {img?: string, question?: string, word: string}
 
 export type DataType = {
     [category: string]:  DataItemType[]
@@ -6,9 +6,8 @@ export type DataType = {
 
 export type GamePropsType = {
   name: string,
-  word: string,
   writedLetters: number
-}
+} & DataItemType
 
 export type RootReducerType = {
   gameData: GamePropsType
@@ -17,6 +16,7 @@ export type InitialRootReducerType = {
   gameData : {
     name: null,
     word: null,
-    writedLetters: number
+    writedLetters: number,
+    img: null,
 }
 }

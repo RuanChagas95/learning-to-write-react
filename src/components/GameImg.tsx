@@ -1,11 +1,17 @@
+import { useSelector } from 'react-redux'
 import styled from 'styled-components'
+import { RootReducerType } from '../utils/types'
 
 const ImgStyle = styled.img`
     width: 50vw;
     height: 50vh;
     `
 export default function GameImg() {
+  const gameData = useSelector((state: RootReducerType) => state.gameData)
+  
   return (
-    <ImgStyle src='https://drudesk.com/sites/default/files/2018-02/404-error-page-not-found.jpg' />
+    <>
+      {(gameData.img && <ImgStyle src={gameData.img} alt="img" />) || 'What is your name?'}
+    </>
   )
 }
