@@ -1,12 +1,7 @@
+export type DataItemType = {word: string, img?: string, question?: string}
+
 export type DataType = {
-    [category: string]: {
-      [item: string]: {
-        img: string
-      }
-    } | {
-      default: string
-      all: string[]
-    }
+    [category: string]:  DataItemType[]
 }
 
 export type GamePropsType = {
