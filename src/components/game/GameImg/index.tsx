@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
-import { RootReducerType } from '../../utils/types'
+import { RootReducerType } from '../../../utils/types'
 
 const ImgStyle = styled.img`
   max-height: calc(100vh - 300px);
