@@ -8,7 +8,7 @@ export const HeaderStyle = styled.header`
   top: 0;
   align-items: center;
   height: 44px;
-  width: 100vw;
+  width: 100%;
 `
 
 export const CategoryStyle = styled.li`

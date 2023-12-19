@@ -3,18 +3,15 @@ import { fadeIn } from '../../styles/animations'
 
 export const WordDiv = styled.div`
 display: flex;
-width: 100vw;
-height: 200px;
+width: 100%;
 justify-content: center;
-padding: 50px 0 0 0;
-position: relative;
 `
 
 export const LetterDiv = styled.div<{$winner: boolean}>`
 display: inline-flex;
 justify-content: center;
 width: 50px;
-max-height: 50px;
+height: 50px;
 max-width: 50px;
 margin: 5px;
 border-radius: 5px;
