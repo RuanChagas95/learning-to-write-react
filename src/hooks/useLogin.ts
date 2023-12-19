@@ -22,7 +22,7 @@ export default function Login() {
   }
 
   const name = loadName()
-  
+
   if (name === null) {
     return () =>
       Swal.fire({
