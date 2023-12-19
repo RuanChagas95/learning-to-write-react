@@ -8,9 +8,7 @@ const ImgStyle = styled.img`
 `
 
 export default function GameImg() {
-  const gameData = useSelector((state: RootReducerType) => state.gameData)
+  const { img } = useSelector((state: RootReducerType) => state.gameData)
 
-  return (
-    (gameData.img && <ImgStyle src={gameData.img} />) || 'What is your name?'
-  )
+  return img && <ImgStyle src={img} />
 }

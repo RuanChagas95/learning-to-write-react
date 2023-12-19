@@ -18,12 +18,14 @@ const gameData = (state = initialState, action: actionType) => {
       ...state,
       name: action.payload.name,
       word: action.payload.name,
+      question: 'what is your name?'
     }
   case setWordState:
     return {
       ...state,
       word: action.payload.word,
       img: action.payload.img,
+      question: action.payload.question,
       writedLetters: 0,
     }
   case hitLetter:

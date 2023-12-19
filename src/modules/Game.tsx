@@ -7,6 +7,7 @@ import { InitialRootReducerType, RootReducerType } from '../utils/types'
 import GameImg from '../components/game/GameImg'
 import Center from '../styles/game/divs/Center'
 import styled from 'styled-components'
+import GameQuestion from '../components/game/GameQuestion'
 
 const Div = styled(Center)`
   margin-top: 50px;
@@ -24,6 +25,7 @@ export default function Game() {
         <Div>
           <GameText />
           <GameImg />
+          <GameQuestion />
         </Div>
         <InvisibleInput />
       </>
