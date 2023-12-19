@@ -6,7 +6,11 @@ import { useSelector } from 'react-redux'
 import { InitialRootReducerType, RootReducerType } from '../utils/types'
 import GameImg from '../components/game/GameImg'
 import Center from '../styles/game/divs/Center'
+import styled from 'styled-components'
 
+const Div = styled(Center)`
+  margin-top: 50px;
+`
 export default function Game() {
   const name = useSelector(
     (state: RootReducerType | InitialRootReducerType) => state.gameData.name
@@ -17,10 +21,10 @@ export default function Game() {
     return (
       <>
         <Header />
-        <Center>
+        <Div>
           <GameText />
           <GameImg />
-        </Center>
+        </Div>
         <InvisibleInput />
       </>
     )

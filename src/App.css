@@ -1,7 +1,7 @@
 #root {
   text-align: center;
-  margin-top: 50px;
   width: 100%;
   min-height: 100%;
   justify-content: center;
+  overflow: hidden;
 }
