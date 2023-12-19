@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { useSendNewLetter } from '../../hooks/InteractGame'
-import { Input, Label } from './styles'
+import { Input } from './styles'
 
 export default function InvisibleInput() {
   const inputRef = useRef<HTMLInputElement>(null)
@@ -22,9 +22,10 @@ export default function InvisibleInput() {
   }, [])
   return (
     <>
-      <Label htmlFor="invisible">invisible label</Label>
       <Input
-        autoComplete="off"
+        autoComplete='off'
+        autoCorrect='off'
+        autoCapitalize='characters'
         id="invisible"
         name="invisible"
         type="text"

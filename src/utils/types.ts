@@ -1,22 +1,24 @@
-export type DataItemType = {img?: string, question?: string, word: string}
+export type DataItemType = { img?: string; question?: string; word: string };
 
 export type DataType = {
-    [category: string]:  DataItemType[]
-}
+  [category: string]: DataItemType[];
+};
 
 export type GamePropsType = {
-  name: string,
-  writedLetters: number
-} & DataItemType
+  name: string;
+  writedLetters: number;
+  error: boolean;
+} & DataItemType;
 
 export type RootReducerType = {
-  gameData: GamePropsType
-}
+  gameData: GamePropsType;
+};
 export type InitialRootReducerType = {
-  gameData : {
-    name: null,
-    word: null,
-    writedLetters: number,
-    img: null,
-}
-}
+  gameData: {
+    name: null;
+    word: null;
+    writedLetters: number;
+    img: null;
+    error: boolean;
+  };
+};

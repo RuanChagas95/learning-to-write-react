@@ -4,21 +4,14 @@ import InvisibleInput from '../components/InvisibleInput'
 import GameManager from '../hooks/GameManager'
 import { useSelector } from 'react-redux'
 import { InitialRootReducerType, RootReducerType } from '../utils/types'
-import styled from 'styled-components'
 import GameImg from '../components/game/GameImg'
+import Center from '../styles/game/divs/Center'
 
 export default function Game() {
   const name = useSelector(
     (state: RootReducerType | InitialRootReducerType) => state.gameData.name
   )
   GameManager()
-
-  const Center = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 75px;
-  `
 
   if (name) {
     return (

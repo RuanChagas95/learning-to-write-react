@@ -1,9 +1,10 @@
-import { setWordState, hitLetter, reset, setName } from './actionsTypes'
+import { setWordState, hitLetter, reset, setName, error } from './actionsTypes'
 import { GamePropsType } from '../../utils/types'
 const initialState = {
   name: null,
   word: null,
   writedLetters: 0,
+  error: false,
 }
 type actionType = {
   type: string;
@@ -29,11 +30,17 @@ const gameData = (state = initialState, action: actionType) => {
     return {
       ...state,
       writedLetters: state.writedLetters ? state.writedLetters + 1 : 1,
+      error: false,
     }
   case reset:
     return {
       ...state,
       writedLetters: 0,
+    }
+  case error:
+    return  {
+      ...state,
+      error: true,
     }
   default:
     return state

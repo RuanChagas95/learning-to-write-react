@@ -1,5 +1,5 @@
 import { RootReducerType } from '../utils/types'
-import { hitLetter } from '../redux/gameData/actionsTypes'
+import { hitLetter, error } from '../redux/gameData/actionsTypes'
 import { playHitAudio } from '../utils/game'
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -12,5 +12,8 @@ export function useSendNewLetter() {
     if (match) {
       dispatch({ type: hitLetter })
       playHitAudio()
-    }}
+    } else {
+      dispatch ({ type: error })
+    }
+  }
 }
