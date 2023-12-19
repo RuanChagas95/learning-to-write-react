@@ -12,7 +12,7 @@ export const Sun = styled.div`
     content: "";
     position: absolute;
     top: -50px;
-    right: -100px;
+    right: -80px;
     z-index: -1;
     height: 200px;
     width: 200px;
