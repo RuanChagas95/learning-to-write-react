@@ -34,8 +34,8 @@ export default function Login() {
           if (!value) {
             Swal.showValidationMessage('Ahh... you need to write something')
           }
-          const name = value.replace(' ', '')
-          saveName(name.toLocaleLowerCase())
+          const name = value.replace(' ', '').toLocaleLowerCase()
+          saveName(name)
           toState(name)
           return value
         },

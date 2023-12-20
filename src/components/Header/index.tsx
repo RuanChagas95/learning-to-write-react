@@ -1,7 +1,11 @@
 import GearIcon from '../../assets/GearIcon'
 import { useState } from 'react'
-import { getCategoriesKeys } from '../../utils/getData'
-import { HeaderStyle, CategoriesStyle, CategoryStyle } from './styles'
+import { HeaderStyle, MenuItem } from './styles'
+
+const resetGame = () => {
+  localStorage.clear()
+  window.location.reload()
+}
 
 export default function Header() {
   const [configIsVisible, setConfigIsVisible] = useState(false)
@@ -9,17 +13,14 @@ export default function Header() {
   return (
     <HeaderStyle>
       {configIsVisible && (
-        <CategoriesStyle>
-          {getCategoriesKeys().map((category) => (
-            <CategoryStyle key={category}>{category}</CategoryStyle>
-          ))}
-        </CategoriesStyle>
+        <MenuItem onClick={resetGame}>Reset Game</MenuItem>
       )}
       <GearIcon
         width="32"
         height="32"
         onClick={() => setConfigIsVisible((prevState) => !prevState)}
-        color="#ffffff6f"
+        color="#ffffff"
+        cursor='pointer'
       />
     </HeaderStyle>
   )
